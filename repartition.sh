@@ -24,7 +24,7 @@ CACHESIZE=64
 
 ODMSIZE=128 # New ODM partition size for those devices having it. Mod this value at your own risk
 
-SGDISK=/sbin/sgdisk
+SGDISK=/tmp/sgdisk
 DISK=/dev/block/mmcblk0
 
 CP_DEBUG=`$SGDISK --print $DISK | grep CP_DEBUG | awk '{printf $1}'`
