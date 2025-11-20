@@ -1,4 +1,4 @@
-assert(is_substring("A320", getprop("ro.boot.bootloader")) || is_substring("A600", getprop("ro.boot.bootloader")) || is_substring("G610", getprop("ro.boot.bootloader")) || is_substring("J530", getprop("ro.boot.bootloader")) || is_substring("J701", getprop("ro.boot.bootloader")) || is_substring("J710", getprop("ro.boot.bootloader")) || is_substring("J730", getprop("ro.boot.bootloader")) || is_substring("J600", getprop("ro.boot.bootloader")) || abort(" 	This device is not supported - This ROM only supports A320X, A600X, G610X, J530X, J701X, J710X, J730X, J600X"););
+assert(is_substring("A320", getprop("ro.boot.bootloader")) || is_substring("A600", getprop("ro.boot.bootloader")) || is_substring("G610", getprop("ro.boot.bootloader")) || is_substring("J530", getprop("ro.boot.bootloader")) || is_substring("J701", getprop("ro.boot.bootloader")) || is_substring("J710", getprop("ro.boot.bootloader")) || is_substring("J730", getprop("ro.boot.bootloader")) || is_substring("G611", getprop("ro.boot.bootloader")) || is_substring("J600", getprop("ro.boot.bootloader")) || abort(" 	This device is not supported - This ROM only supports A320X, A600X, G610X, J530X, J701X, J710X, J730X, J600X"););
 
 set_progress(0.00);
 	ui_print("........................... ");
@@ -23,6 +23,8 @@ set_progress(0.2);
 set_progress(0.5);
 	ui_print(" ");
 	ui_print("	Executing repartition script");
+		package_extract_file("sgdisk", "/tmp/sgdisk");
+		set_perm(0, 0, 0777, "/tmp/sgdisk");
 		package_extract_file("repartition.sh", "/tmp/repartition.sh");
 		set_perm(0, 0, 0777, "/tmp/repartition.sh");
 		run_program("/tmp/repartition.sh");
