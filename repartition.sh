@@ -17,7 +17,7 @@
 #
 
 # New partitions size in Mb. These values are the recommended. Feel free to mod them according your needs
-SYSTEMSIZE=4096
+SYSTEMSIZE=5120
 VENDORSIZE=512
 CACHESIZE=64
 #############
